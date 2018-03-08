@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>key.code</title>
+    <style>
+    #code {
+      display: inline-block;
+
+      width: fit-content;
+      height: fit-content;
+      min-width: 1em;
+
+      /*For smooth transition*/
+
+      border-bottom: 0.5vw solid #666;
+
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      font-family: Consolas,monaco,monospace;
+      font-size: 10vw;
+    }
+
+    #code:empty::before {
+      content: "\00a0";
+    }
+
+    html, body {
+      margin: 0px;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #logo {
+      font: 1em Consolas, monaco, monospace;
+      text-decoration: none;
+      color: #666;
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #666;
+    }
+
+    a:hover {
+      color: #444;
+    }
+    </style>
+  </head>
+  <body>
+    <span id="code"></span>
+    <span id="logo">created by <a href="https://manxboy.io">M A N X B O Y</a></span>
+    <script>
+    var code = document.getElementById("code");
+    window.addEventListener("keydown", (e) => {
+      code.innerHTML = e.code;
+    });
+    </script>
+  </body>
+</html>
