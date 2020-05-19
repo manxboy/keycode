@@ -61,6 +61,7 @@
     var code = document.getElementById("code");
     window.addEventListener("keydown", (e) => {
       code.innerHTML = e.code;
+      e.preventDefault();
     });
     </script>
   </body>
